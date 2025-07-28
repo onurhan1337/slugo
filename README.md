@@ -1,4 +1,4 @@
-# Slugo - Turkish Slug Generator
+# Slugo - 🐌
 
 A Go package for generating URL-friendly slugs with Turkish character support. Slugo can be used both as a library in your Go projects and as a command-line tool.
 
@@ -26,7 +26,7 @@ source ~/.zshrc
 ### As a Library
 
 ```bash
-go get github.com/onurhan1337/slugo@latest
+go get github.com/onurhan1337/slugo
 ```
 
 ### As a CLI Tool
@@ -235,7 +235,7 @@ if err != nil {
 
 If you get `invalid github.com import path` errors:
 
-1. Make sure you're using the correct commands: `go get github.com/onurhan1337/slugo@latest` for library, `go install github.com/onurhan1337/slugo/cmd/slugo@latest` for CLI
+1. Make sure you're using the correct commands: `go get github.com/onurhan1337/slugo` for library, `go install github.com/onurhan1337/slugo/cmd/slugo@latest` for CLI
 2. Ensure `~/go/bin` is in your PATH
 3. Try installing from the specific version if needed: `go install github.com/onurhan1337/slugo/cmd/slugo@v1.0.0`
 
