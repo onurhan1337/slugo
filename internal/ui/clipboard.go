@@ -18,7 +18,7 @@ func CopyToSystemClipboard(text string) error {
 	case "windows":
 		cmd = exec.Command("clip")
 	default:
-		return fmt.Errorf("clipboard desteği olmayan işletim sistemi: %s", runtime.GOOS)
+		return fmt.Errorf("unsupported operating system for clipboard: %s", runtime.GOOS)
 	}
 	cmd.Stdin = strings.NewReader(text)
 	return cmd.Run()

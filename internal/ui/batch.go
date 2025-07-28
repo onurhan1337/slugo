@@ -2,8 +2,9 @@ package ui
 
 import (
 	"fmt"
-	"slugo/internal/slug"
 	"strings"
+
+	"github.com/onurhan/slugo/internal/slug"
 )
 
 type BatchOutput struct {
@@ -15,19 +16,19 @@ type BatchOutput struct {
 
 func PrintBatchResult(result slug.BatchResult) {
 	if result.Error != nil {
-		fmt.Printf("Satır %d: ", result.LineNumber)
+		fmt.Printf("Line %d: ", result.LineNumber)
 		PrintError(result.Error)
 	} else {
-		fmt.Printf("Satır %d: %s -> %s\n", result.LineNumber, result.Original, result.Slug)
+		fmt.Printf("Line %d: %s -> %s\n", result.LineNumber, result.Original, result.Slug)
 	}
 }
 
 func PrintBatchSummary(output BatchOutput) {
-	fmt.Printf("\n--- İşlem Özeti ---\n")
-	fmt.Printf("Toplam satır: %d\n", output.Total)
-	fmt.Printf("Başarılı: %d\n", output.Success)
-	fmt.Printf("Hatalı: %d\n", output.Errors)
-	fmt.Printf("------------------\n")
+	fmt.Printf("\n--- Processing Summary ---\n")
+	fmt.Printf("Total lines: %d\n", output.Total)
+	fmt.Printf("Successful: %d\n", output.Success)
+	fmt.Printf("Errors: %d\n", output.Errors)
+	fmt.Printf("------------------------\n")
 }
 
 func ProcessBatchResults(results []slug.BatchResult) BatchOutput {
@@ -67,15 +68,15 @@ func copyResultsToClipboard(results []slug.BatchResult) {
 	}
 
 	if len(successfulSlugs) == 0 {
-		fmt.Println("Kopyalanacak başarılı slug bulunamadı.")
+		fmt.Println("No successful slugs found to copy.")
 		return
 	}
 
 	clipboardText := strings.Join(successfulSlugs, "\n")
 
 	if err := CopyToSystemClipboard(clipboardText); err != nil {
-		fmt.Printf("Clipboard'a kopyalama hatası: %v\n", err)
+		fmt.Printf("Clipboard copy error: %v\n", err)
 	} else {
-		fmt.Printf("✓ %d slug clipboard'a kopyalandı\n", len(successfulSlugs))
+		fmt.Printf("✓ %d slugs copied to clipboard\n", len(successfulSlugs))
 	}
 }

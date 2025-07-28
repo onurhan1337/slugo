@@ -14,9 +14,9 @@ type ValidationError struct {
 
 func (e *ValidationError) Error() string {
 	if e.Field != "" {
-		return fmt.Sprintf("doğrulama hatası: alan '%s' geçersiz '%v'. Neden: %s", e.Field, e.Value, e.Message)
+		return fmt.Sprintf("validation error: field '%s' invalid '%v'. reason: %s", e.Field, e.Value, e.Message)
 	}
-	return fmt.Sprintf("doğrulama hatası: %s", e.Message)
+	return fmt.Sprintf("validation error: %s", e.Message)
 }
 
 func (e *ValidationError) Unwrap() error {
@@ -38,7 +38,7 @@ func NewValidationError(field string, value any, err error) error {
 }
 
 var (
-	ErrInvalidInput = goerrors.New("geçersiz girdi")
+	ErrInvalidInput = goerrors.New("invalid input")
 )
 
 func IsValidationError(err error) (*ValidationError, bool) {

@@ -3,8 +3,9 @@ package ui
 import (
 	"flag"
 	"os"
-	"slugo/internal/slug"
-	apperrors "slugo/pkg/errors"
+
+	"github.com/onurhan/slugo/internal/slug"
+	apperrors "github.com/onurhan/slugo/pkg/errors"
 )
 
 type InputMode int
@@ -29,12 +30,12 @@ func NewCLIHandler() *CLIHandler {
 }
 
 func (ch *CLIHandler) ParseFlags() {
-	flag.StringVar(&ch.filename, "file", "", "Dosyadan okumak için dosya yolu")
-	flag.BoolVar(&ch.copyToClipboard, "copy", false, "Sonucu clipboard'a kopyala")
-	flag.BoolVar(&ch.copyToClipboard, "c", false, "Sonucu clipboard'a kopyala (kısa form)")
-	flag.StringVar(&ch.prefix, "prefix", "", "Slug'a önek ekle (örn: blog-)")
-	flag.StringVar(&ch.suffix, "suffix", "", "Slug'a sonek ekle (örn: -v2)")
-	flag.IntVar(&ch.maxLength, "max-length", 0, "Slug'ın maksimum uzunluğu (0 = sınırsız)")
+	flag.StringVar(&ch.filename, "file", "", "File path to read from")
+	flag.BoolVar(&ch.copyToClipboard, "copy", false, "Copy result to clipboard")
+	flag.BoolVar(&ch.copyToClipboard, "c", false, "Copy result to clipboard (short form)")
+	flag.StringVar(&ch.prefix, "prefix", "", "Add prefix to slug (e.g., blog-)")
+	flag.StringVar(&ch.suffix, "suffix", "", "Add suffix to slug (e.g., -v2)")
+	flag.IntVar(&ch.maxLength, "max-length", 0, "Maximum slug length (0 = unlimited)")
 	flag.Parse()
 }
 

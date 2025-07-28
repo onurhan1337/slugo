@@ -4,8 +4,6 @@ import (
 	"bufio"
 	"io"
 	"os"
-
-	apperrors "github.com/onurhan/slugo/pkg/errors"
 )
 
 type BatchResult struct {
@@ -28,7 +26,7 @@ func NewBatchProcessor(reader io.Reader) *BatchProcessor {
 func NewFileBatchProcessor(filename string) (*BatchProcessor, error) {
 	file, err := os.Open(filename)
 	if err != nil {
-		return nil, apperrors.NewValidationError("filename", filename, err)
+		return nil, err
 	}
 
 	return &BatchProcessor{
