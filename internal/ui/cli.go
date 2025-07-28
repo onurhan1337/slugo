@@ -6,8 +6,8 @@ import (
 	"os"
 	"strings"
 
-	"github.com/onurhan/slugo/internal/slug"
-	apperrors "github.com/onurhan/slugo/pkg/errors"
+	"github.com/onurhan1337/slugo/internal/slug"
+	apperrors "github.com/onurhan1337/slugo/pkg/errors"
 )
 
 type SuccessOutput struct {

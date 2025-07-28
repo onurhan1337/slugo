@@ -5,7 +5,7 @@ import (
 	"regexp"
 	"strings"
 
-	apperrors "github.com/onurhan/slugo/pkg/errors"
+	apperrors "github.com/onurhan1337/slugo/pkg/errors"
 )
 
 func Generate(text string) (string, error) {

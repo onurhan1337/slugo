@@ -16,13 +16,13 @@ A fast and efficient command-line URL slug generator written in Go, with support
 ### As a Library
 
 ```bash
-go get github.com/onurhan/slugo
+go get github.com/onurhan1337/slugo
 ```
 
 ### As a CLI Tool
 
 ```bash
-go install github.com/onurhan/slugo/cmd/slugo@latest
+go install github.com/onurhan1337/slugo/cmd/slugo@latest
 ```
 
 ## Usage
@@ -36,7 +36,7 @@ package main
 
 import (
     "fmt"
-    "github.com/onurhan/slugo/pkg/slug"
+    "github.com/onurhan1337/slugo/pkg/slug"
 )
 
 func main() {
@@ -56,7 +56,7 @@ package main
 
 import (
     "fmt"
-    "github.com/onurhan/slugo/pkg/slug"
+    "github.com/onurhan1337/slugo/pkg/slug"
 )
 
 func main() {
@@ -77,7 +77,7 @@ package main
 import (
     "fmt"
     "os"
-    "github.com/onurhan/slugo/pkg/slug"
+    "github.com/onurhan1337/slugo/pkg/slug"
 )
 
 func main() {
@@ -109,7 +109,7 @@ package main
 
 import (
     "os"
-    "github.com/onurhan/slugo/pkg/slug"
+    "github.com/onurhan1337/slugo/pkg/slug"
 )
 
 func main() {
@@ -169,7 +169,7 @@ echo "Merhaba Dünya!" | slugo
 
 ## API Reference
 
-### Package: `github.com/onurhan/slugo/pkg/slug`
+### Package: `github.com/onurhan1337/slugo/pkg/slug`
 
 #### Functions
 
@@ -188,7 +188,7 @@ echo "Merhaba Dünya!" | slugo
 - `Process() ([]BatchResult, error)`
 - `ProcessWithCallback(callback func(BatchResult)) error`
 
-### Package: `github.com/onurhan/slugo/pkg/errors`
+### Package: `github.com/onurhan1337/slugo/pkg/errors`
 
 - `ValidationError`: Custom validation error type
 - `NewValidationError(field, value, err)`: Create validation error

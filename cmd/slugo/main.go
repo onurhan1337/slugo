@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/onurhan/slugo/internal/ui"
-	apperrors "github.com/onurhan/slugo/pkg/errors"
+	"github.com/onurhan1337/slugo/internal/ui"
+	apperrors "github.com/onurhan1337/slugo/pkg/errors"
 )
 
 func main() {

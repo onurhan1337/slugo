@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/onurhan/slugo/internal/slug"
+	"github.com/onurhan1337/slugo/internal/slug"
 )
 
 type BatchOutput struct {

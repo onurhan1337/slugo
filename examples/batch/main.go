@@ -5,7 +5,7 @@ import (
 	"log"
 	"strings"
 
-	"github.com/onurhan/slugo/pkg/slug"
+	"github.com/onurhan1337/slugo/pkg/slug"
 )
 
 func main() {
