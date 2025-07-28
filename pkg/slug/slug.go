@@ -4,8 +4,6 @@ import (
 	"errors"
 	"regexp"
 	"strings"
-
-	apperrors "github.com/onurhan1337/slugo/pkg/errors"
 )
 
 func Generate(text string) (string, error) {
@@ -33,7 +31,7 @@ func Generate(text string) (string, error) {
 		} else {
 			reason = "text contains only invalid characters"
 		}
-		return "", apperrors.NewValidationError("input", text, errors.New(reason))
+		return "", errors.New(reason)
 	}
 
 	s = strings.ReplaceAll(trimmedS, " ", "-")
@@ -42,4 +40,19 @@ func Generate(text string) (string, error) {
 	s = regMultipleDashes.ReplaceAllString(s, "-")
 
 	return s, nil
+}
+
+func GenerateWithOptions(text string, prefix, suffix string, maxLength int) (string, error) {
+	slug, err := Generate(text)
+	if err != nil {
+		return "", err
+	}
+
+	finalSlug := prefix + slug + suffix
+
+	if maxLength > 0 && len(finalSlug) > maxLength {
+		finalSlug = finalSlug[:maxLength]
+	}
+
+	return finalSlug, nil
 }
